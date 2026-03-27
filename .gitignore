@@ -48,3 +48,5 @@ Package.resolved
 # Signing
 *.mobileprovision
 *.provisionprofile
+landing/node_modules
+landing/.next
