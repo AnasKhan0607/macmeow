@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
+const basePath = process.env.NODE_ENV === "production" ? "/macmeow" : "";
+
 const personalities = [
   {
     id: "dramatic",
@@ -13,7 +15,7 @@ const personalities = [
     borderColor: "border-orange-200",
     trigger: "Shake or tilt your laptop",
     quote: "EARTHQUAKE! WE'RE ALL GONNA—oh wait you just shifted positions.",
-    image: "/cats/dramatic.svg",
+    image: `${basePath}/cats/dramatic.svg`,
   },
   {
     id: "hungry",
@@ -23,7 +25,7 @@ const personalities = [
     borderColor: "border-green-200",
     trigger: "Battery drops below 20%",
     quote: "feed me... electrons... I'm fading...",
-    image: "/cats/hungry.svg",
+    image: `${basePath}/cats/hungry.svg`,
   },
   {
     id: "judgmental",
@@ -33,7 +35,7 @@ const personalities = [
     borderColor: "border-purple-200",
     trigger: "Open certain apps",
     quote: "Twitter again? It's been 4 minutes since you last checked.",
-    image: "/cats/judgmental.svg",
+    image: `${basePath}/cats/judgmental.svg`,
   },
   {
     id: "needy",
@@ -43,7 +45,7 @@ const personalities = [
     borderColor: "border-pink-200",
     trigger: "Leave your Mac idle or close the lid",
     quote: "Wait... you're leaving? Was it something I said?",
-    image: "/cats/needy.svg",
+    image: `${basePath}/cats/needy.svg`,
   },
 ];
 
@@ -81,7 +83,7 @@ export default function Home() {
             transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           >
             <Image
-              src="/cats/mac-hero.svg"
+              src={`${basePath}/cats/mac-hero.svg`}
               alt="Mac the Cat"
               fill
               className="object-contain"
@@ -291,7 +293,7 @@ export default function Home() {
           className="max-w-xl mx-auto text-center"
         >
           <Image
-            src="/cats/mac-hero.svg"
+            src={`${basePath}/cats/mac-hero.svg`}
             alt="Mac"
             width={150}
             height={150}
