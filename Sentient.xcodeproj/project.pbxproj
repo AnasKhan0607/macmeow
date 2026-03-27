@@ -1,0 +1,442 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2432005A39A09CFEC3B66D85 /* EventBus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D331CC635E88FE56020D8AB /* EventBus.swift */; };
+		2BBDF8F02E6933E01D5F9A1B /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA06064C4C5C2E1753F31D6 /* SettingsManager.swift */; };
+		2F5FB7258BC80E547F21685F /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5875A493AB6F74819020DA /* SoundManager.swift */; };
+		40793108E76FC61451FE25CE /* SentientApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F939D5166C2A8884DEB8DB7 /* SentientApp.swift */; };
+		4D39829D4EF9D50DC6459998 /* AccelerometerMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5543167BB53F8BFED0B22622 /* AccelerometerMonitor.swift */; };
+		91302614FCB814AEEA72C2BB /* IdleMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D560D4F11E96D6E6291453 /* IdleMonitor.swift */; };
+		9275E1B76526DD800D27117E /* AppMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0D323C8509A5242A0ED380 /* AppMonitor.swift */; };
+		93F24102D7EA7C464A107929 /* Personality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B03223D2F4204971488B20 /* Personality.swift */; };
+		9B74E3888EF0A9D719F41054 /* HungryPersonality.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC1FDAE114ADCC6060B795F /* HungryPersonality.swift */; };
+		A0A746A060BA333029D1C1E3 /* BatteryMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C2D8EA5204193182C19018 /* BatteryMonitor.swift */; };
+		A264F4F93B1E6735CE7EEE33 /* DramaticPersonality.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF72259E9882F09C0024E0DF /* DramaticPersonality.swift */; };
+		A9C81AD5D6F432E2E21A6543 /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0429E9EB85B5674A9F1DD213 /* StatusBarController.swift */; };
+		AD9F47F0D5261A22F2F5536B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637345863B821E9165EF9C08 /* SettingsView.swift */; };
+		D047C817CE607246457F00F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7D7B39E19BE43AF1839D77 /* AppDelegate.swift */; };
+		D3BBC3D8612EDFAB1061097A /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05C551EEF4786DD30A9FD9D /* MenuBarView.swift */; };
+		E68C97D019118EC80A791A58 /* PersonalityToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4809E4242810ACB3318649D /* PersonalityToggle.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0429E9EB85B5674A9F1DD213 /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
+		19055D8ADE30E051011B908D /* Sentient.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sentient.entitlements; sourceTree = "<group>"; };
+		3D331CC635E88FE56020D8AB /* EventBus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventBus.swift; sourceTree = "<group>"; };
+		48B03223D2F4204971488B20 /* Personality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Personality.swift; sourceTree = "<group>"; };
+		4B5875A493AB6F74819020DA /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		5543167BB53F8BFED0B22622 /* AccelerometerMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerometerMonitor.swift; sourceTree = "<group>"; };
+		55850C00FADF5E140559B35A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		59D560D4F11E96D6E6291453 /* IdleMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdleMonitor.swift; sourceTree = "<group>"; };
+		637345863B821E9165EF9C08 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7F939D5166C2A8884DEB8DB7 /* SentientApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentientApp.swift; sourceTree = "<group>"; };
+		980EA380C500032729A2F13F /* Sentient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sentient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F0D323C8509A5242A0ED380 /* AppMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMonitor.swift; sourceTree = "<group>"; };
+		A05C551EEF4786DD30A9FD9D /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
+		AAA06064C4C5C2E1753F31D6 /* SettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsManager.swift; sourceTree = "<group>"; };
+		B4809E4242810ACB3318649D /* PersonalityToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalityToggle.swift; sourceTree = "<group>"; };
+		BBC1FDAE114ADCC6060B795F /* HungryPersonality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HungryPersonality.swift; sourceTree = "<group>"; };
+		BF72259E9882F09C0024E0DF /* DramaticPersonality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DramaticPersonality.swift; sourceTree = "<group>"; };
+		C2C2D8EA5204193182C19018 /* BatteryMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryMonitor.swift; sourceTree = "<group>"; };
+		CE7D7B39E19BE43AF1839D77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		07302DF0D6CEDE9139B6903F /* Personalities */ = {
+			isa = PBXGroup;
+			children = (
+				BF72259E9882F09C0024E0DF /* DramaticPersonality.swift */,
+				BBC1FDAE114ADCC6060B795F /* HungryPersonality.swift */,
+			);
+			path = Personalities;
+			sourceTree = "<group>";
+		};
+		07AC75B62B5BAA090C45C511 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CE7D7B39E19BE43AF1839D77 /* AppDelegate.swift */,
+				7F939D5166C2A8884DEB8DB7 /* SentientApp.swift */,
+				0429E9EB85B5674A9F1DD213 /* StatusBarController.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		0DECC839B7E0109E82C3FA65 /* dramatic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = dramatic;
+			sourceTree = "<group>";
+		};
+		29B6F4B7D004B3CA1F5B51CB /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3D331CC635E88FE56020D8AB /* EventBus.swift */,
+				48B03223D2F4204971488B20 /* Personality.swift */,
+				AAA06064C4C5C2E1753F31D6 /* SettingsManager.swift */,
+				4B5875A493AB6F74819020DA /* SoundManager.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		2A55186C08D5378011A964DC /* Sensors */ = {
+			isa = PBXGroup;
+			children = (
+				5543167BB53F8BFED0B22622 /* AccelerometerMonitor.swift */,
+				9F0D323C8509A5242A0ED380 /* AppMonitor.swift */,
+				C2C2D8EA5204193182C19018 /* BatteryMonitor.swift */,
+				59D560D4F11E96D6E6291453 /* IdleMonitor.swift */,
+			);
+			path = Sensors;
+			sourceTree = "<group>";
+		};
+		2ED62DB8C3606FDF2994EDD9 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				0DECC839B7E0109E82C3FA65 /* dramatic */,
+				C2B2498AA2F991965948C39E /* hungry */,
+				DBF229C52B82A18DCFBCB143 /* judgmental */,
+				4E1361DA07F42954A545DE1C /* needy */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		31D106B6B3D2F26774E673EB = {
+			isa = PBXGroup;
+			children = (
+				DB55FED752FEB88E2B45765B /* Sentient */,
+				3E26FF6D3EE9C9F75501B810 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3E26FF6D3EE9C9F75501B810 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				980EA380C500032729A2F13F /* Sentient.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E1361DA07F42954A545DE1C /* needy */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = needy;
+			sourceTree = "<group>";
+		};
+		98AAE3653B7D9FFC4314638D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				A05C551EEF4786DD30A9FD9D /* MenuBarView.swift */,
+				B4809E4242810ACB3318649D /* PersonalityToggle.swift */,
+				637345863B821E9165EF9C08 /* SettingsView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		C2B2498AA2F991965948C39E /* hungry */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = hungry;
+			sourceTree = "<group>";
+		};
+		C4AD0BCBEF7F56E15167ABDB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2ED62DB8C3606FDF2994EDD9 /* Sounds */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DB55FED752FEB88E2B45765B /* Sentient */ = {
+			isa = PBXGroup;
+			children = (
+				55850C00FADF5E140559B35A /* Info.plist */,
+				19055D8ADE30E051011B908D /* Sentient.entitlements */,
+				07AC75B62B5BAA090C45C511 /* App */,
+				29B6F4B7D004B3CA1F5B51CB /* Core */,
+				07302DF0D6CEDE9139B6903F /* Personalities */,
+				C4AD0BCBEF7F56E15167ABDB /* Resources */,
+				2A55186C08D5378011A964DC /* Sensors */,
+				98AAE3653B7D9FFC4314638D /* UI */,
+			);
+			path = Sentient;
+			sourceTree = "<group>";
+		};
+		DBF229C52B82A18DCFBCB143 /* judgmental */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = judgmental;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4D060803E8CABC888A225249 /* Sentient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1CB22D84D56A8F43A975C2B /* Build configuration list for PBXNativeTarget "Sentient" */;
+			buildPhases = (
+				C18C6EF4B24F40973421BD56 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sentient;
+			packageProductDependencies = (
+			);
+			productName = Sentient;
+			productReference = 980EA380C500032729A2F13F /* Sentient.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		307553A9AE6786568A316702 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					4D060803E8CABC888A225249 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D20499EA4E7E72B5039CC0D0 /* Build configuration list for PBXProject "Sentient" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 31D106B6B3D2F26774E673EB;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 3E26FF6D3EE9C9F75501B810 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4D060803E8CABC888A225249 /* Sentient */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C18C6EF4B24F40973421BD56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D39829D4EF9D50DC6459998 /* AccelerometerMonitor.swift in Sources */,
+				D047C817CE607246457F00F4 /* AppDelegate.swift in Sources */,
+				9275E1B76526DD800D27117E /* AppMonitor.swift in Sources */,
+				A0A746A060BA333029D1C1E3 /* BatteryMonitor.swift in Sources */,
+				A264F4F93B1E6735CE7EEE33 /* DramaticPersonality.swift in Sources */,
+				2432005A39A09CFEC3B66D85 /* EventBus.swift in Sources */,
+				9B74E3888EF0A9D719F41054 /* HungryPersonality.swift in Sources */,
+				91302614FCB814AEEA72C2BB /* IdleMonitor.swift in Sources */,
+				D3BBC3D8612EDFAB1061097A /* MenuBarView.swift in Sources */,
+				93F24102D7EA7C464A107929 /* Personality.swift in Sources */,
+				E68C97D019118EC80A791A58 /* PersonalityToggle.swift in Sources */,
+				40793108E76FC61451FE25CE /* SentientApp.swift in Sources */,
+				2BBDF8F02E6933E01D5F9A1B /* SettingsManager.swift in Sources */,
+				AD9F47F0D5261A22F2F5536B /* SettingsView.swift in Sources */,
+				2F5FB7258BC80E547F21685F /* SoundManager.swift in Sources */,
+				A9C81AD5D6F432E2E21A6543 /* StatusBarController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0FB78024A143BCC488875496 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = Sentient;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		8CFEB7ECDEA3B6C42594859D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sentient/Sentient.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Sentient/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LSUIElement = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anaskhan.sentient;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BC45295A715866A06D0F0DCC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = Sentient;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		C5EECBCCB4658FFCFCB0961D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Sentient/Sentient.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Sentient/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LSUIElement = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anaskhan.sentient;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D20499EA4E7E72B5039CC0D0 /* Build configuration list for PBXProject "Sentient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC45295A715866A06D0F0DCC /* Debug */,
+				0FB78024A143BCC488875496 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E1CB22D84D56A8F43A975C2B /* Build configuration list for PBXNativeTarget "Sentient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5EECBCCB4658FFCFCB0961D /* Debug */,
+				8CFEB7ECDEA3B6C42594859D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 307553A9AE6786568A316702 /* Project object */;
+}
