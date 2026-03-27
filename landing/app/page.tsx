@@ -90,14 +90,14 @@ export default function Home() {
           </motion.div>
 
           <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4 tracking-tight">
-            Meet <span className="text-[#5568C8]">Mac</span>
+            <span className="text-[#5568C8]">MacMeow</span>
           </h1>
           
           <p className="text-xl text-gray-600 mb-2">
-            The cat that lives in your menu bar.
+            A judgmental cat in your menu bar.
           </p>
           <p className="text-lg text-gray-500 mb-8">
-            He watches. He judges. He has opinions.
+            He watches. He reacts. He has opinions.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -106,7 +106,7 @@ export default function Home() {
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-[#5568C8] text-white rounded-2xl font-semibold text-lg shadow-lg shadow-blue-200 hover:bg-[#4758B8] transition-colors"
             >
-              Download for Mac
+              Download MacMeow
             </motion.button>
             <span className="text-gray-400 text-sm">macOS 14+ · Apple Silicon</span>
           </div>
@@ -310,7 +310,7 @@ export default function Home() {
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 bg-[#5568C8] text-white rounded-2xl font-semibold text-lg shadow-lg shadow-blue-200 hover:bg-[#4758B8] transition-colors"
           >
-            Download Sentient
+            Download MacMeow
           </motion.button>
           
           <p className="text-gray-400 text-sm mt-4">

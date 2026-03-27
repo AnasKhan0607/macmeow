@@ -5,21 +5,21 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Sentient - Your Mac is alive now",
+  title: "MacMeow - A judgmental cat in your menu bar",
   description:
-    "Give your MacBook a personality. It reacts to how you treat it — tilt it, ignore it, or doom-scroll. Your Mac now has feelings about all of it.",
-  keywords: ["mac app", "macos", "personality", "fun", "menu bar", "accelerometer"],
+    "A cute cat that lives in your Mac's menu bar. He watches what you do, reacts to how you treat your laptop, and has strong opinions about your battery life.",
+  keywords: ["mac app", "macos", "cat", "menu bar", "fun", "accelerometer", "macmeow"],
   authors: [{ name: "Anas Khan" }],
   openGraph: {
-    title: "Sentient - Your Mac is alive now",
-    description: "Give your MacBook a personality that reacts to how you treat it.",
+    title: "MacMeow - A judgmental cat in your menu bar",
+    description: "A cute cat that lives in your Mac's menu bar and judges everything you do.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sentient - Your Mac is alive now",
-    description: "Give your MacBook a personality that reacts to how you treat it.",
+    title: "MacMeow - A judgmental cat in your menu bar",
+    description: "A cute cat that lives in your Mac's menu bar and judges everything you do.",
     creator: "@AnasKhan0607",
   },
 };
