@@ -31,6 +31,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Start idle monitoring
         IdleMonitor.shared.startMonitoring()
+        
+        // Start lid monitoring (for needy personality)
+        LidMonitor.shared.startMonitoring()
     }
     
     func applicationWillTerminate(_ notification: Notification) {
@@ -39,5 +42,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         BatteryMonitor.shared.stopMonitoring()
         AppMonitor.shared.stopMonitoring()
         IdleMonitor.shared.stopMonitoring()
+        LidMonitor.shared.stopMonitoring()
     }
 }
