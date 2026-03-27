@@ -1,0 +1,57 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hungry Cat - Drooling, big pleading eyes -->
+  <defs>
+    <linearGradient id="hungryFur" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#A8D5BA"/>
+      <stop offset="100%" style="stop-color:#7CB890"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Body - slightly slumped -->
+  <ellipse cx="100" cy="145" rx="55" ry="35" fill="url(#hungryFur)"/>
+  
+  <!-- Head -->
+  <circle cx="100" cy="85" r="45" fill="url(#hungryFur)"/>
+  
+  <!-- Ears - droopy -->
+  <path d="M55 60 L58 18 L80 55 Z" fill="url(#hungryFur)"/>
+  <path d="M145 60 L142 18 L120 55 Z" fill="url(#hungryFur)"/>
+  <path d="M58 55 L60 25 L77 52 Z" fill="#C8E6D0"/>
+  <path d="M142 55 L140 25 L123 52 Z" fill="#C8E6D0"/>
+  
+  <!-- Eyes - big puppy dog eyes -->
+  <ellipse cx="75" cy="78" rx="16" ry="20" fill="white"/>
+  <ellipse cx="125" cy="78" rx="16" ry="20" fill="white"/>
+  <ellipse cx="75" cy="82" r="10" fill="#4A6741"/>
+  <ellipse cx="125" cy="82" r="10" fill="#4A6741"/>
+  <circle cx="78" cy="78" r="4" fill="white"/>
+  <circle cx="128" cy="78" r="4" fill="white"/>
+  <!-- Shine for pleading look -->
+  <circle cx="72" cy="85" r="2" fill="white" opacity="0.6"/>
+  <circle cx="122" cy="85" r="2" fill="white" opacity="0.6"/>
+  
+  <!-- Eyebrows - worried/pleading -->
+  <path d="M58 62 Q75 68 90 62" stroke="#4A6741" stroke-width="2.5" fill="none"/>
+  <path d="M110 62 Q125 68 142 62" stroke="#4A6741" stroke-width="2.5" fill="none"/>
+  
+  <!-- Nose -->
+  <ellipse cx="100" cy="100" rx="6" ry="4" fill="#FF8080"/>
+  
+  <!-- Mouth - slight frown -->
+  <path d="M88 112 Q100 108 112 112" stroke="#4A6741" stroke-width="2.5" fill="none"/>
+  
+  <!-- Drool -->
+  <path d="M95 115 Q93 130 95 140 Q97 145 94 150" stroke="#87CEEB" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <ellipse cx="94" cy="152" rx="4" ry="3" fill="#87CEEB"/>
+  
+  <!-- Whiskers - droopy -->
+  <line x1="45" y1="92" x2="68" y2="100" stroke="#4A6741" stroke-width="1.5"/>
+  <line x1="42" y1="105" x2="68" y2="108" stroke="#4A6741" stroke-width="1.5"/>
+  <line x1="132" y1="100" x2="155" y2="92" stroke="#4A6741" stroke-width="1.5"/>
+  <line x1="132" y1="108" x2="158" y2="105" stroke="#4A6741" stroke-width="1.5"/>
+  
+  <!-- Empty battery icon -->
+  <rect x="150" y="55" width="25" height="14" rx="2" fill="none" stroke="#FF6B6B" stroke-width="2"/>
+  <rect x="175" y="59" width="4" height="6" rx="1" fill="#FF6B6B"/>
+  <rect x="153" y="58" width="5" height="8" fill="#FF6B6B"/>
+</svg>

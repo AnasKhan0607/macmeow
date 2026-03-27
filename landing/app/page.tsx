@@ -1,291 +1,337 @@
 "use client";
 
+import { motion } from "framer-motion";
+import Image from "next/image";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const personalities = [
   {
-    emoji: "🎭",
+    id: "dramatic",
     name: "Dramatic",
-    description: "Screams when you tilt it. Gasps when you slam the lid. Lives for chaos.",
-    color: "from-red-100 to-orange-100",
-    borderColor: "border-red-200",
-    reactions: ["AHHH!", "Why would you do this?!", "*gasp*"],
+    color: "#FFB347",
+    bgColor: "bg-orange-50",
+    borderColor: "border-orange-200",
+    trigger: "Shake or tilt your laptop",
+    quote: "EARTHQUAKE! WE'RE ALL GONNA—oh wait you just shifted positions.",
+    image: "/cats/dramatic.svg",
   },
   {
-    emoji: "🍔",
+    id: "hungry",
     name: "Hungry",
-    description: "Gets hangry when battery is low. Very satisfied when you plug it in.",
-    color: "from-amber-100 to-yellow-100",
-    borderColor: "border-amber-200",
-    reactions: ["Feed me...", "*stomach growl*", "Ahhh yummy electricity!"],
+    color: "#7CB890",
+    bgColor: "bg-green-50",
+    borderColor: "border-green-200",
+    trigger: "Battery drops below 20%",
+    quote: "feed me... electrons... I'm fading...",
+    image: "/cats/hungry.svg",
   },
   {
-    emoji: "😤",
+    id: "judgmental",
     name: "Judgmental",
-    description: "Sighs when you open Twitter. Disappointed when you scroll Reddit. Again.",
-    color: "from-purple-100 to-indigo-100",
+    color: "#9B8BB4",
+    bgColor: "bg-purple-50",
     borderColor: "border-purple-200",
-    reactions: ["*sigh* Really?", "I expected better.", "Here we go again..."],
+    trigger: "Open certain apps",
+    quote: "Twitter again? It's been 4 minutes since you last checked.",
+    image: "/cats/judgmental.svg",
   },
   {
-    emoji: "🥺",
+    id: "needy",
     name: "Needy",
-    description: "Misses you when you're away. So happy when you come back. Please don't leave.",
-    color: "from-pink-100 to-rose-100",
+    color: "#F08080",
+    bgColor: "bg-pink-50",
     borderColor: "border-pink-200",
-    reactions: ["Don't leave me!", "You're back! 🥹", "I missed you..."],
+    trigger: "Leave your Mac idle or close the lid",
+    quote: "Wait... you're leaving? Was it something I said?",
+    image: "/cats/needy.svg",
   },
 ];
 
-function MacBookMock({ reaction }: { reaction: string | null }) {
-  return (
-    <motion.div
-      className="relative"
-      whileHover={{ rotate: [-2, 2, -2, 0] }}
-      transition={{ duration: 0.5 }}
-    >
-      {/* MacBook Body */}
-      <div className="w-64 h-40 bg-gradient-to-b from-gray-200 to-gray-300 rounded-t-lg shadow-lg relative overflow-hidden">
-        {/* Screen */}
-        <div className="absolute inset-2 bg-gradient-to-br from-gray-800 to-gray-900 rounded-md flex items-center justify-center">
-          <AnimatePresence mode="wait">
-            {reaction ? (
-              <motion.div
-                key={reaction}
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0, opacity: 0 }}
-                className="text-white text-center px-4"
-              >
-                <span className="text-2xl">{reaction}</span>
-              </motion.div>
-            ) : (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-4xl"
-              >
-                🧠
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-        {/* Camera dot */}
-        <div className="absolute top-3 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-gray-600 rounded-full" />
-      </div>
-      {/* MacBook Base */}
-      <div className="w-72 h-3 bg-gradient-to-b from-gray-300 to-gray-400 rounded-b-lg -mt-0.5 mx-auto shadow-md">
-        <div className="w-12 h-1 bg-gray-400 rounded-full mx-auto mt-1" />
-      </div>
-    </motion.div>
-  );
-}
-
-function PersonalityCard({
-  personality,
-  isSelected,
-  onClick,
-}: {
-  personality: (typeof personalities)[0];
-  isSelected: boolean;
-  onClick: () => void;
-}) {
-  return (
-    <motion.button
-      onClick={onClick}
-      className={`personality-card p-6 rounded-2xl border-2 text-left w-full bg-gradient-to-br ${personality.color} ${personality.borderColor} ${isSelected ? "ring-2 ring-offset-2 ring-pink-400" : ""}`}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-    >
-      <div className="text-4xl mb-3">{personality.emoji}</div>
-      <h3 className="text-xl font-semibold mb-2">{personality.name}</h3>
-      <p className="text-gray-600 text-sm">{personality.description}</p>
-    </motion.button>
-  );
-}
-
 export default function Home() {
-  const [selectedPersonality, setSelectedPersonality] = useState<number | null>(null);
-  const [currentReaction, setCurrentReaction] = useState<string | null>(null);
-
-  const handlePersonalityClick = (index: number) => {
-    setSelectedPersonality(index);
-    const reactions = personalities[index].reactions;
-    const randomReaction = reactions[Math.floor(Math.random() * reactions.length)];
-    setCurrentReaction(randomReaction);
-
-    setTimeout(() => setCurrentReaction(null), 2000);
-  };
+  const [activePersonality, setActivePersonality] = useState(0);
 
   return (
-    <main className="min-h-screen gradient-bg">
+    <main className="min-h-screen bg-[#FAFAFA] overflow-hidden">
+      {/* Hand-drawn style background elements */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <svg className="absolute top-20 left-10 w-20 h-20 text-blue-200 opacity-40" viewBox="0 0 100 100">
+          <path d="M50 10 Q60 50 50 90 M10 50 Q50 60 90 50" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round"/>
+        </svg>
+        <svg className="absolute top-40 right-20 w-16 h-16 text-pink-200 opacity-50" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="2" fill="none" strokeDasharray="8 4"/>
+        </svg>
+        <svg className="absolute bottom-40 left-20 w-24 h-24 text-purple-200 opacity-30" viewBox="0 0 100 100">
+          <path d="M20 50 L50 20 L80 50 L50 80 Z" stroke="currentColor" strokeWidth="2" fill="none"/>
+        </svg>
+      </div>
+
       {/* Hero Section */}
-      <section className="container mx-auto px-4 pt-20 pb-16">
-        <div className="text-center max-w-3xl mx-auto">
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 py-20">
+        {/* Main content */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-2xl mx-auto"
+        >
+          {/* Cat mascot */}
           <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ type: "spring", duration: 0.8 }}
-            className="text-7xl mb-6"
+            className="relative w-64 h-64 mx-auto mb-8"
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           >
-            🧠
+            <Image
+              src="/cats/mac-hero.svg"
+              alt="Mac the Cat"
+              fill
+              className="object-contain"
+              priority
+            />
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent"
-          >
-            Your Mac is alive now.
-          </motion.h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-800 mb-4 tracking-tight">
+            Meet <span className="text-[#5568C8]">Mac</span>
+          </h1>
+          
+          <p className="text-xl text-gray-600 mb-2">
+            The cat that lives in your menu bar.
+          </p>
+          <p className="text-lg text-gray-500 mb-8">
+            He watches. He judges. He has opinions.
+          </p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto"
-          >
-            Sentient gives your MacBook a personality. It reacts to how you treat it — 
-            tilt it, ignore it, drain its battery, or doom-scroll. 
-            Your Mac now has <span className="text-pink-500 font-semibold">feelings</span> about all of it.
-          </motion.p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-4 bg-[#5568C8] text-white rounded-2xl font-semibold text-lg shadow-lg shadow-blue-200 hover:bg-[#4758B8] transition-colors"
+            >
+              Download for Mac
+            </motion.button>
+            <span className="text-gray-400 text-sm">macOS 14+ · Apple Silicon</span>
+          </div>
+        </motion.div>
 
+        {/* Scroll indicator */}
+        <motion.div
+          className="absolute bottom-10"
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <svg className="w-6 h-6 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </motion.div>
+      </section>
+
+      {/* Personality Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-5xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <a
-              href="https://github.com/AnasKhan0607/sentient/releases"
-              className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-pink-500/30 transition-all hover:-translate-y-0.5"
-            >
-              Download for Mac 🍎
-            </a>
-            <a
-              href="https://github.com/AnasKhan0607/sentient"
-              className="px-8 py-4 bg-white/80 backdrop-blur border border-gray-200 font-semibold rounded-full hover:bg-white transition-all"
-            >
-              View on GitHub ↗
-            </a>
-          </motion.div>
-
-          <motion.p
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-            className="text-sm text-gray-400 mt-4"
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
           >
-            Requires macOS 13+ and Apple Silicon (M1/M2/M3/M4)
-          </motion.p>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              Four personalities. One chaotic cat.
+            </h2>
+            <p className="text-gray-600 text-lg">
+              Mac reacts to what you do. Sometimes helpfully. Usually not.
+            </p>
+          </motion.div>
+
+          {/* Personality showcase */}
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            {/* Cat display */}
+            <motion.div
+              key={activePersonality}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3 }}
+              className={`relative aspect-square max-w-md mx-auto w-full rounded-3xl ${personalities[activePersonality].bgColor} ${personalities[activePersonality].borderColor} border-2 p-8 flex flex-col items-center justify-center`}
+            >
+              <Image
+                src={personalities[activePersonality].image}
+                alt={personalities[activePersonality].name}
+                width={200}
+                height={200}
+                className="mb-6"
+              />
+              
+              {/* Speech bubble */}
+              <div className="relative bg-white rounded-2xl px-6 py-4 shadow-sm max-w-xs">
+                <p className="text-gray-700 text-center italic">
+                  "{personalities[activePersonality].quote}"
+                </p>
+                {/* Bubble tail */}
+                <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white rotate-45" />
+              </div>
+            </motion.div>
+
+            {/* Personality selector */}
+            <div className="space-y-4">
+              {personalities.map((p, i) => (
+                <motion.button
+                  key={p.id}
+                  onClick={() => setActivePersonality(i)}
+                  whileHover={{ x: 4 }}
+                  className={`w-full text-left p-5 rounded-2xl border-2 transition-all ${
+                    activePersonality === i
+                      ? `${p.bgColor} ${p.borderColor}`
+                      : "bg-white border-gray-100 hover:border-gray-200"
+                  }`}
+                >
+                  <div className="flex items-center gap-4">
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center"
+                      style={{ backgroundColor: `${p.color}20` }}
+                    >
+                      <Image src={p.image} alt={p.name} width={32} height={32} />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-800">{p.name}</h3>
+                      <p className="text-sm text-gray-500">{p.trigger}</p>
+                    </div>
+                  </div>
+                </motion.button>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Interactive Demo Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Meet the personalities</h2>
-          <p className="text-gray-600">Click one to see how your Mac reacts</p>
-        </div>
+      {/* How it works - simple */}
+      <section className="py-20 px-6 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              How it works
+            </h2>
+          </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-12 items-center justify-center">
-          {/* MacBook Preview */}
-          <div className="flex-shrink-0">
-            <MacBookMock reaction={currentReaction} />
-            <p className="text-center text-sm text-gray-400 mt-4">
-              {selectedPersonality !== null
-                ? `${personalities[selectedPersonality].name} mode`
-                : "Pick a personality!"}
-            </p>
-          </div>
-
-          {/* Personality Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl">
-            {personalities.map((personality, index) => (
-              <PersonalityCard
-                key={personality.name}
-                personality={personality}
-                isSelected={selectedPersonality === index}
-                onClick={() => handlePersonalityClick(index)}
-              />
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                step: "1",
+                title: "Install",
+                desc: "Drop it in Applications. That's it. No setup, no accounts.",
+              },
+              {
+                step: "2",
+                title: "Ignore it",
+                desc: "Mac lives in your menu bar. He's always watching. Always.",
+              },
+              {
+                step: "3",
+                title: "Get judged",
+                desc: "Tilt your laptop. Check Twitter too much. Let your battery die. Mac will have thoughts.",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="text-center"
+              >
+                <div className="w-12 h-12 rounded-full bg-[#5568C8] text-white flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                  {item.step}
+                </div>
+                <h3 className="font-semibold text-gray-800 mb-2">{item.title}</h3>
+                <p className="text-gray-600 text-sm">{item.desc}</p>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">How it works</h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-5xl mb-4">📱</div>
-              <h3 className="font-semibold text-lg mb-2">Uses real sensors</h3>
-              <p className="text-gray-600 text-sm">
-                Reads the hidden accelerometer in Apple Silicon Macs to detect tilts, slaps, and shakes.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="text-5xl mb-4">🔋</div>
-              <h3 className="font-semibold text-lg mb-2">Watches your battery</h3>
-              <p className="text-gray-600 text-sm">
-                Gets hungry when low, satisfied when charged. Your Mac has needs now.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="text-5xl mb-4">👀</div>
-              <h3 className="font-semibold text-lg mb-2">Judges your apps</h3>
-              <p className="text-gray-600 text-sm">
-                Knows when you open Twitter. Will sigh. Loudly. Disappointedly.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Privacy Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="max-w-2xl mx-auto text-center bg-white/60 backdrop-blur rounded-3xl p-8 border border-gray-100">
-          <div className="text-4xl mb-4">🔒</div>
-          <h2 className="text-2xl font-bold mb-4">100% Local. 100% Private.</h2>
-          <p className="text-gray-600">
-            Sentient runs entirely on your Mac. No data is collected, no analytics, no tracking. 
-            Your Mac's feelings stay between you and your Mac.
-          </p>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="container mx-auto px-4 py-20">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to awaken your Mac?</h2>
-          <p className="text-gray-600 mb-8">Free download. No account required.</p>
-          <a
-            href="https://github.com/AnasKhan0607/sentient/releases"
-            className="inline-block px-10 py-5 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-full text-lg hover:shadow-xl hover:shadow-pink-500/30 transition-all hover:-translate-y-1"
+      {/* Privacy - casual */}
+      <section className="py-20 px-6">
+        <div className="max-w-2xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
           >
-            Download Sentient 🧠
-          </a>
+            <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+              </svg>
+              100% Local
+            </div>
+            
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">
+              Mac doesn't phone home
+            </h2>
+            <p className="text-gray-600 text-lg mb-4">
+              No accounts. No analytics. No cloud. No AI watching what you do.
+            </p>
+            <p className="text-gray-500">
+              Everything runs locally on your Mac. The cat is self-contained.
+              <br />
+              Your battery anxiety stays between you and Mac.
+            </p>
+          </motion.div>
         </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-20 px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-xl mx-auto text-center"
+        >
+          <Image
+            src="/cats/mac-hero.svg"
+            alt="Mac"
+            width={150}
+            height={150}
+            className="mx-auto mb-8"
+          />
+          
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">
+            Ready to be judged?
+          </h2>
+          <p className="text-gray-600 mb-8">
+            Free to download. Your Mac is about to get a lot more opinionated.
+          </p>
+          
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-4 bg-[#5568C8] text-white rounded-2xl font-semibold text-lg shadow-lg shadow-blue-200 hover:bg-[#4758B8] transition-colors"
+          >
+            Download Sentient
+          </motion.button>
+          
+          <p className="text-gray-400 text-sm mt-4">
+            v1.0 · macOS 14 Sonoma or later · Apple Silicon
+          </p>
+        </motion.div>
       </section>
 
       {/* Footer */}
-      <footer className="container mx-auto px-4 py-8 text-center text-gray-400 text-sm">
-        <p>
-          Made with 💕 by{" "}
-          <a
-            href="https://twitter.com/AnasKhan0607"
-            className="text-pink-500 hover:underline"
-          >
-            @AnasKhan0607
-          </a>
-        </p>
-        <p className="mt-2">Your Mac didn't ask for this. But here we are.</p>
+      <footer className="py-8 px-6 border-t border-gray-100">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+          <p>Made with questionable life choices by Anas Khan</p>
+          <div className="flex gap-6">
+            <a href="https://twitter.com/AnasKhan0607" className="hover:text-gray-800 transition-colors">
+              Twitter
+            </a>
+            <a href="https://github.com/AnasKhan0607/sentient" className="hover:text-gray-800 transition-colors">
+              GitHub
+            </a>
+          </div>
+        </div>
       </footer>
     </main>
   );

@@ -1,0 +1,60 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Judgmental Cat - Smug, half-lidded eyes, unimpressed -->
+  <defs>
+    <linearGradient id="judgeFur" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#B8A9C9"/>
+      <stop offset="100%" style="stop-color:#9B8BB4"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Body - sitting upright, prim -->
+  <ellipse cx="100" cy="145" rx="45" ry="38" fill="url(#judgeFur)"/>
+  
+  <!-- Head -->
+  <circle cx="100" cy="82" r="45" fill="url(#judgeFur)"/>
+  
+  <!-- Ears - alert, upright -->
+  <path d="M58 52 L65 12 L85 48 Z" fill="url(#judgeFur)"/>
+  <path d="M142 52 L135 12 L115 48 Z" fill="url(#judgeFur)"/>
+  <path d="M62 48 L66 20 L82 45 Z" fill="#D4C8E0"/>
+  <path d="M138 48 L134 20 L118 45 Z" fill="#D4C8E0"/>
+  
+  <!-- Eyes - half-lidded, unimpressed -->
+  <ellipse cx="75" cy="78" rx="15" ry="10" fill="white"/>
+  <ellipse cx="125" cy="78" rx="15" ry="10" fill="white"/>
+  <!-- Heavy lids -->
+  <ellipse cx="75" cy="74" rx="16" ry="8" fill="url(#judgeFur)"/>
+  <ellipse cx="125" cy="74" rx="16" ry="8" fill="url(#judgeFur)"/>
+  <!-- Pupils looking to the side -->
+  <ellipse cx="78" cy="80" rx="6" ry="5" fill="#5C4A72"/>
+  <ellipse cx="128" cy="80" rx="6" ry="5" fill="#5C4A72"/>
+  <circle cx="80" cy="79" r="2" fill="white"/>
+  <circle cx="130" cy="79" r="2" fill="white"/>
+  
+  <!-- Eyebrows - one raised -->
+  <path d="M58 62 L90 58" stroke="#5C4A72" stroke-width="2.5" fill="none"/>
+  <path d="M110 64 Q125 58 142 62" stroke="#5C4A72" stroke-width="2.5" fill="none"/>
+  
+  <!-- Nose -->
+  <ellipse cx="100" cy="95" rx="5" ry="3.5" fill="#C490A0"/>
+  
+  <!-- Mouth - smirk -->
+  <path d="M92 105 Q100 102 108 105" stroke="#5C4A72" stroke-width="2" fill="none"/>
+  <path d="M108 105 Q112 108 115 105" stroke="#5C4A72" stroke-width="2" fill="none"/>
+  
+  <!-- Whiskers - neat -->
+  <line x1="50" y1="88" x2="70" y2="92" stroke="#5C4A72" stroke-width="1.5"/>
+  <line x1="48" y1="98" x2="70" y2="98" stroke="#5C4A72" stroke-width="1.5"/>
+  <line x1="130" y1="92" x2="150" y2="88" stroke="#5C4A72" stroke-width="1.5"/>
+  <line x1="130" y1="98" x2="152" y2="98" stroke="#5C4A72" stroke-width="1.5"/>
+  
+  <!-- Monocle -->
+  <circle cx="125" cy="78" r="18" fill="none" stroke="#FFD700" stroke-width="2"/>
+  <line x1="143" y1="78" x2="155" y2="95" stroke="#FFD700" stroke-width="1.5"/>
+  
+  <!-- "Really?" thought bubble -->
+  <ellipse cx="165" cy="40" rx="25" ry="15" fill="white" stroke="#DDD" stroke-width="1"/>
+  <circle cx="148" cy="55" r="4" fill="white" stroke="#DDD" stroke-width="1"/>
+  <circle cx="142" cy="62" r="2.5" fill="white" stroke="#DDD" stroke-width="1"/>
+  <text x="165" y="44" text-anchor="middle" font-size="10" font-style="italic" fill="#5C4A72">Really?</text>
+</svg>

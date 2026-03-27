@@ -1,0 +1,54 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dramatic Cat - Wide eyes, shocked expression -->
+  <defs>
+    <linearGradient id="dramaticFur" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFB347"/>
+      <stop offset="100%" style="stop-color:#FF8C42"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Body -->
+  <ellipse cx="100" cy="140" rx="50" ry="40" fill="url(#dramaticFur)"/>
+  
+  <!-- Head -->
+  <circle cx="100" cy="85" r="45" fill="url(#dramaticFur)"/>
+  
+  <!-- Ears -->
+  <path d="M60 55 L70 20 L85 50 Z" fill="url(#dramaticFur)"/>
+  <path d="M140 55 L130 20 L115 50 Z" fill="url(#dramaticFur)"/>
+  <path d="M65 50 L72 28 L82 48 Z" fill="#FFD4B8"/>
+  <path d="M135 50 L128 28 L118 48 Z" fill="#FFD4B8"/>
+  
+  <!-- Eyes - HUGE dramatic eyes -->
+  <ellipse cx="78" cy="80" rx="18" ry="22" fill="white"/>
+  <ellipse cx="122" cy="80" rx="18" ry="22" fill="white"/>
+  <circle cx="78" cy="82" r="12" fill="#2D1B14"/>
+  <circle cx="122" cy="82" r="12" fill="#2D1B14"/>
+  <circle cx="82" cy="78" r="4" fill="white"/>
+  <circle cx="126" cy="78" r="4" fill="white"/>
+  
+  <!-- Eyebrows - raised in shock -->
+  <path d="M58 58 Q78 48 95 58" stroke="#8B4513" stroke-width="3" fill="none"/>
+  <path d="M105 58 Q122 48 142 58" stroke="#8B4513" stroke-width="3" fill="none"/>
+  
+  <!-- Nose -->
+  <ellipse cx="100" cy="100" rx="6" ry="4" fill="#FF6B6B"/>
+  
+  <!-- Mouth - shocked O -->
+  <ellipse cx="100" cy="115" rx="8" ry="10" fill="#2D1B14"/>
+  
+  <!-- Whiskers -->
+  <line x1="45" y1="95" x2="70" y2="100" stroke="#8B4513" stroke-width="1.5"/>
+  <line x1="45" y1="105" x2="70" y2="105" stroke="#8B4513" stroke-width="1.5"/>
+  <line x1="130" y1="100" x2="155" y2="95" stroke="#8B4513" stroke-width="1.5"/>
+  <line x1="130" y1="105" x2="155" y2="105" stroke="#8B4513" stroke-width="1.5"/>
+  
+  <!-- Sweat drop -->
+  <path d="M145 60 Q150 70 145 80 Q140 70 145 60" fill="#87CEEB"/>
+  
+  <!-- Motion lines -->
+  <path d="M35 70 L25 65" stroke="#FFB347" stroke-width="2" stroke-linecap="round"/>
+  <path d="M30 85 L18 85" stroke="#FFB347" stroke-width="2" stroke-linecap="round"/>
+  <path d="M165 70 L175 65" stroke="#FFB347" stroke-width="2" stroke-linecap="round"/>
+  <path d="M170 85 L182 85" stroke="#FFB347" stroke-width="2" stroke-linecap="round"/>
+</svg>

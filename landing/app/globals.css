@@ -2,83 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #fefcfb;
-  --foreground: #1a1a2e;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  min-height: 100vh;
-}
-
-/* Gradient background */
-.gradient-bg {
-  background: linear-gradient(
-    135deg,
-    #fef9f3 0%,
-    #fdf2f8 25%,
-    #f0f9ff 50%,
-    #f5f3ff 75%,
-    #fef9f3 100%
-  );
-  background-size: 400% 400%;
-  animation: gradient-shift 15s ease infinite;
-}
-
-@keyframes gradient-shift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Emoji bounce on hover */
-.emoji-hover:hover {
-  animation: bounce 0.5s ease;
-}
-
-/* Glow effect */
-.glow {
-  box-shadow: 0 0 20px rgba(255, 182, 193, 0.3),
-    0 0 40px rgba(255, 182, 193, 0.2), 0 0 60px rgba(255, 182, 193, 0.1);
-}
-
-/* MacBook tilt animation */
-@keyframes tilt {
-  0%,
-  100% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(-5deg);
-  }
-  75% {
-    transform: rotate(5deg);
-  }
-}
-
-.animate-tilt:hover {
-  animation: tilt 0.5s ease-in-out;
-}
-
-/* Personality card hover */
-.personality-card {
-  transition: all 0.3s ease;
-}
-
-.personality-card:hover {
-  transform: translateY(-4px);
-}
-
-/* Selection color */
-::selection {
-  background: #ffd1dc;
-  color: #1a1a2e;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
