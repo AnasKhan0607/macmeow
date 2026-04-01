@@ -27,12 +27,12 @@ from pathlib import Path
 FISH_API_KEY = os.environ.get("FISH_API_KEY", "40288fd705db4ac08078d3d908687ba9")
 FISH_API_URL = "https://api.fish.audio/v1/tts"
 
-# Voice options (Fish.audio reference IDs)
+# Voice options (Fish.audio reference IDs) - using known working voices
 VOICES = {
-    "dramatic": "e58b0d7efca34eb5a3372a94e959ed7b",  # Expressive male
-    "hungry": "a0e99b7d44534c9faabecd0f5f27e74e",    # Cute/whiny
-    "judgmental": "b6b26eb9a7e24ad0853c4c4e8889e32c",  # Disappointed parent
-    "needy": "e58b0d7efca34eb5a3372a94e959ed7b",     # Sad/pleading
+    "dramatic": "e91c4f5974f149478a35affe820d02ac",  # Stewie - expressive/dramatic
+    "hungry": "54e3a85ac9594ffa83264b8a494b901b",    # SpongeBob - whiny/cute
+    "judgmental": "76bb6ae7b26c41fbbd484514fdb014c2",  # Morgan Freeman - disappointed
+    "needy": "e91c4f5974f149478a35affe820d02ac",     # Stewie - dramatic/pleading
 }
 
 # Sound lines to generate
